@@ -6,15 +6,15 @@
 //
 
 
-import SwiftUI
+import Foundation
+import Observation
 
 @Observable
 final class ProductStore {
     
-    // MARK: - Singleton
-    static let shared = ProductStore()
-    private init() {}
-    var favoriteProductIDs: Set<UUID> = []
+    
+    private(set) var favoriteProductIDs: Set<UUID> = []
+
 
     // MARK: - State
     var products: [Product] = [
@@ -110,5 +110,9 @@ extension ProductStore {
             favoriteProductIDs.insert(product.id)
         }
     }
+    
+    var favoriteProducts: [Product] {
+            products.filter { favoriteProductIDs.contains($0.id) }
+        }
 }
 

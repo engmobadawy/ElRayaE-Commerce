@@ -95,12 +95,54 @@ struct ProfileView: View {
         .foregroundStyle(.primary)
     }
 
+    @ViewBuilder
     private func destinationView(for route: Route) -> some View {
-        // Replace with real screens later
-        Text(route.title)
-            .navigationTitle(route.title)
-            .navigationBarTitleDisplayMode(.inline)
+        switch route {
+        case .favorites:
+            FavoriteView()
+                .navigationTitle(route.title)
+
+        case .personalInfo:
+            Text("Personal Information")
+                .navigationTitle(route.title)
+
+        case .promo:
+            Text("Promo Code")
+                .navigationTitle(route.title)
+
+        case .shipping:
+            Text("Shipping Address")
+                .navigationTitle(route.title)
+
+        case .wallet:
+            Text("Wallet")
+                .navigationTitle(route.title)
+
+        case .about:
+            Text("About Us")
+                .navigationTitle(route.title)
+
+        case .privacy:
+            Text("Privacy Policy")
+                .navigationTitle(route.title)
+
+        case .terms:
+            Text("Terms & Conditions")
+                .navigationTitle(route.title)
+
+        case .faqs:
+            Text("FAQs")
+                .navigationTitle(route.title)
+
+        case .changePassword:
+            Text("Change Password")
+                .navigationTitle(route.title)
+        }
     }
+
+
+        
+    
 }
 
 enum Route: Hashable {

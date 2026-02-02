@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct ElRayaApp: App {
-    @State private var productStore = ProductStore.shared
+    @State private var productStore = ProductStore()
     var body: some Scene {
         WindowGroup {
             MainTabView()

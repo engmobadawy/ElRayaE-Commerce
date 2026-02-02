@@ -10,7 +10,7 @@ import SwiftUI
 
 
 struct CategoryView: View {
-    
+   
     @Environment(ProductStore.self) private var store
     
     private let columns = [
@@ -85,7 +85,7 @@ struct CategoryView: View {
 
 #Preview {
     CategoryView()
-        .environment(ProductStore.shared)
+        .environment(ProductStore())
 }
 
 

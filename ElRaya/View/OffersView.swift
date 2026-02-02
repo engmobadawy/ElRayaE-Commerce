@@ -68,5 +68,5 @@ struct OffersView: View {
 
 #Preview {
     OffersView()
-        .environment(ProductStore.shared)
+        .environment(ProductStore())
 }

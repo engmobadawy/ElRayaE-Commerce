@@ -3,9 +3,6 @@ import SwiftUI
 struct HomeView: View {
     
     @Environment(ProductStore.self) private var store
-    
-    
-
     @State private var searchText = ""
     @State private var selectedCategory: Category = .handlesKnobs
 
@@ -88,4 +85,5 @@ struct HomeView: View {
 
 #Preview {
     HomeView()
+        .environment(ProductStore())
 }
